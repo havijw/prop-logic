@@ -35,10 +35,10 @@ Lines are automatically numbered, so all you have to do is type your proof. Capi
 
 The standard propositional logical symbols are understood. Specifically, the allowed symbols and their representations are
 
-* $\lnot = $ ```--``` (negation)
-* $\land = $ ```/\``` (conjunction/and)
-* $\lor = $ ```\/``` (disjunction/or)
-* $\rightarrow = $ ```->``` (implication)
+* &not; is ```--``` (negation)
+* &and; is ```/\``` (conjunction/and)
+* &or; is ```\/``` (disjunction/or)
+* &rarr; is ```->``` (implication)
 
 ### Justification
 
@@ -46,37 +46,22 @@ Each line of a proof consists of a formula written with variables and the symbol
 
 * ```PR``` premise, no justification needed.
 * ```AS``` assumption, no justification needed. Used in conditional and indirect derivations.
-* ```MP``` modus ponens, justified by two previous lines. Relative to the following, one of the listed lines should contain $\varphi \rightarrow \psi$ and the other $\varphi$.
-
-$$ \varphi \rightarrow \psi, \varphi \vdash \psi $$
-
-* ```MT``` modus tollens, justified by two previous lines. Relative to the following, one of the listed lines should contain $\varphi \rightarrow \psi$ and the other $\lnot \psi$.
-
-$$ \varphi \rightarrow \psi, \lnot \psi \vdash \psi $$
-
-* ```DNE``` double negation elimination, justified by one previous line. Relative to the following, the listed line should contain $\lnot(\lnot \varphi)$.
-
-$$ \lnot(\lnot \varphi) \vdash \varphi $$
-
-* ```DNI``` double negation introduction, justified by one previous line. Relative to the following, the list line should contain $\varphi$.
-
-$$ \varphi \vdash \lnot(\lnot \varphi) $$
-
-* ```ADJ``` adjunction, justified by two previous lines. Relative to the following, one of the listed lines should contain $\varphi$ and the other $\psi$.
-
-$$ \varphi, \psi \vdash \varphi \land \psi $$
-
-* ```S``` simplification, justified by one previous line. Relative to the following, the listed line should contain $\varphi \land \psi$.
-
-$$ \varphi \land \psi \vdash \varphi $$
-
-* ```ADD``` addition, justified by one previous line. Relative to the following, the listed line should contain $\varphi$.
-
-$$ \varphi \vdash \varphi \lor \psi $$
-
-* ```MTP``` modus tollendo ponens (also called disjunctive syllogism), justified by two previous lines. Relative to the following, one oft he other listed lines should contain $\varphi \lor \psi$ and the other $\lnot \varphi$.
-
-$$ \varphi \lor \psi, \lnot \varphi \vdash \psi $$
+* ```MP``` modus ponens, justified by two previous lines. Relative to the following, one of the listed lines should contain &phi; &rarr; &psi; and the other &phi;.
+> &phi; &rarr; &psi;, &phi; &vdash; &psi;
+* ```MT``` modus tollens, justified by two previous lines. Relative to the following, one of the listed lines should contain &phi; &rarr; &psi; and the other &not; &psi;.
+> &phi; &rarr; &psi;, &not; &psi; &vdash; &psi;
+* ```DNE``` double negation elimination, justified by one previous line. Relative to the following, the listed line should contain &not;(&not; &phi;).
+> &not;(&not; &phi;) &vdash; &phi;
+* ```DNI``` double negation introduction, justified by one previous line. Relative to the following, the list line should contain &phi;.
+> &phi; &vdash; &not;(&not; &phi;)
+* ```ADJ``` adjunction, justified by two previous lines. Relative to the following, one of the listed lines should contain &phi; and the other &psi;.
+> &phi;, &psi; &vdash; &phi; &and; &psi;
+* ```S``` simplification, justified by one previous line. Relative to the following, the listed line should contain &phi; &and; &psi;.
+> &phi; &and; &psi; &vdash; &phi;
+* ```ADD``` addition, justified by one previous line. Relative to the following, the listed line should contain &phi;.
+> &phi; &vdash; &phi; &or; &psi;
+* ```MTP``` modus tollendo ponens (also called disjunctive syllogism), justified by two previous lines. Relative to the following, one of the other listed lines should contain &phi; &or; &psi; and the other &not; &phi;.
+> &phi; &or; &psi;, &not; &phi; &vdash; &psi;
 
 ### Writing Proofs
 
@@ -87,10 +72,8 @@ Proofs are started with a *show* line, which consists of ```show``` followed by 
 There are three styles of proofs that are allowed: direct derivations, conditional derivations, and indirect derivations. They are identified by their *QED* lines.
 
 * Direct derivations prove any formula and have no assumptions. They begin with a *show* line and proceed directly from the *show* line to the *QED* line, which is ```:DD``` followed by the line number on which the formula specified in the *show* line was achieved.
-
-* Conditional derivations prove formulas of the form $\varphi \rightarrow \psi$ and have one assumption, namely $\varphi$. They begin with assuming $\varphi$ and proceed to achieve $\psi$. They conclude with the *QED* line, which is ```:CD``` followed by the line number on which $\psi$ was achieved.
-
-* Indirect derivations prove formulas of the from $\lnot \varphi$ and have one assumption, namely $\varphi$. They begin with assuming $\varphi$ and proceeds to achieve a contradiction, which is having $\psi$ and $\lnot \psi$ on separate lines for any formula $\psi$. They conclude with the *QED* line, which is ```:ID``` followed by the line numbers on which $\psi$ and $\lnot \psi$ were achieved.
+* Conditional derivations prove formulas of the form &phi; &rarr; &psi; and have one assumption, namely &phi;. They begin with assuming &phi; and proceed to achieve &psi;. They conclude with the *QED* line, which is ```:CD``` followed by the line number on which &psi; was achieved.
+* Indirect derivations prove formulas of the from &not; &phi; and have one assumption, namely &phi;. They begin with assuming &phi; and proceeds to achieve a contradiction, which is having &psi; and &not; &psi; on separate lines for any formula &psi;. They conclude with the *QED* line, which is ```:ID``` followed by the line numbers on which &psi; and &not; &psi; were achieved.
 
 Note that proofs can be nested using *show* and *QED* lines as usual.
 
