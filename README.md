@@ -47,21 +47,21 @@ Each line of a proof consists of a formula written with variables and the symbol
 * ```PR``` premise, no justification needed.
 * ```AS``` assumption, no justification needed. Used in conditional and indirect derivations.
 * ```MP``` modus ponens, justified by two previous lines. Relative to the following, one of the listed lines should contain &phi; &rarr; &psi; and the other &phi;.
-> &phi; &rarr; &psi;, &phi; &vdash; &psi;
+  > &phi; &rarr; &psi;, &phi; &vdash; &psi;
 * ```MT``` modus tollens, justified by two previous lines. Relative to the following, one of the listed lines should contain &phi; &rarr; &psi; and the other &not; &psi;.
-> &phi; &rarr; &psi;, &not; &psi; &vdash; &psi;
+  > &phi; &rarr; &psi;, &not; &psi; &vdash; &psi;
 * ```DNE``` double negation elimination, justified by one previous line. Relative to the following, the listed line should contain &not;(&not; &phi;).
-> &not;(&not; &phi;) &vdash; &phi;
+  > &not;(&not; &phi;) &vdash; &phi;
 * ```DNI``` double negation introduction, justified by one previous line. Relative to the following, the list line should contain &phi;.
-> &phi; &vdash; &not;(&not; &phi;)
+  > &phi; &vdash; &not;(&not; &phi;)
 * ```ADJ``` adjunction, justified by two previous lines. Relative to the following, one of the listed lines should contain &phi; and the other &psi;.
-> &phi;, &psi; &vdash; &phi; &and; &psi;
+  > &phi;, &psi; &vdash; &phi; &and; &psi;
 * ```S``` simplification, justified by one previous line. Relative to the following, the listed line should contain &phi; &and; &psi;.
-> &phi; &and; &psi; &vdash; &phi;
+  > &phi; &and; &psi; &vdash; &phi;
 * ```ADD``` addition, justified by one previous line. Relative to the following, the listed line should contain &phi;.
-> &phi; &vdash; &phi; &or; &psi;
+  > &phi; &vdash; &phi; &or; &psi;
 * ```MTP``` modus tollendo ponens (also called disjunctive syllogism), justified by two previous lines. Relative to the following, one of the other listed lines should contain &phi; &or; &psi; and the other &not; &phi;.
-> &phi; &or; &psi;, &not; &phi; &vdash; &psi;
+  > &phi; &or; &psi;, &not; &phi; &vdash; &psi;
 
 ### Writing Proofs
 
